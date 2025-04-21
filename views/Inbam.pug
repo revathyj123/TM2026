@@ -1,0 +1,87 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Inbam
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      .inbam-list {
+        width: 80%;
+        max-width: 600px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .inbam {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .inbam:last-child {
+        border-bottom: none;
+      }
+      .signup-button {
+        background: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .signed-up {
+        background: #6c757d;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .back-button {
+        margin-top: 20px;
+        background: #6c757d;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .disabled-button {
+        background: #6c757d;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: none;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+  body
+    h1 inbam List
+    .inbam-list 
+      each item in inbam
+        .inbam
+          span= `${item.athikaram_number} - ${item.athikaram_name}`
+          if item.signed_up
+            button.disabled-button(disabled) ✔ Signed Up
+          else
+            a.signup-button(href=`/signup/${item.id}`) Signup
+    a.button.back-button(href="/")
+          span 🏠 Home

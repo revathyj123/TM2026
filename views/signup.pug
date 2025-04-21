@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Signup Form
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .button {
+        margin-top: 10px;
+        background: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+      }
+      .button:hover {
+        background: #218838;
+      }
+  body
+    h1 Signup for #{athikaram.athikaram_name}
+    form(action="/signup" method="POST")
+      input(type="hidden" name="athikaram_id" value=athikaram.id)
+      .form-group
+        label(for="name") Name:
+        input(type="text" id="name" name="name" required)
+      .form-group
+        label(for="email") Email:
+        input(type="email" id="email" name="email" required)
+      .form-group
+        label(for="phone") Phone Number:
+        input(type="tel" id="phone" name="phone" pattern="[0-9]{10}" required)
+      button(type="submit" class="button") Sign Up
+    a.button.back-button(href="/")
+      span 🏠 Cancel

@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Tirukural Mutrothal
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f4f4f4;
+      }
+      .left img {
+        width: 90%;
+        height: auto;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+      .right h1 {
+        margin-bottom: 10px;
+      }
+      .right p {
+        margin-bottom: 10px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+  body
+    .left
+      img(src="/images/TVR.jpg", alt="Sample Image")
+    .right
+      h1 Welcome to North America Tirukural Mutrothal
+      p 19 Jan 2025
+      p Join us Online
+      p Your journey starts here
+      a.button(href="/Pal") Sign Up
+

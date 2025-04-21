@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Signup Report
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      table {
+        width: 90%;
+        max-width: 900px;
+        border-collapse: collapse;
+        background: white;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background: #007BFF;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .back-button {
+        margin-top: 20px;
+        background: #6c757d;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+  body
+    h1 Signup Report
+    table
+      tr
+        th Athikaram Number
+        th Athikaram Name
+        th Name
+        th Email
+        th Phone
+        th Signup Date
+      each signup in signups
+        tr
+          td= signup.athikaram_number
+          td= signup.athikaram_name
+          td= signup.name
+          td= signup.email
+          td= signup.phone
+          td #{new Date(signup.signup_date).toLocaleString()}
+    a.back-button(href="/") 🏠 Home
